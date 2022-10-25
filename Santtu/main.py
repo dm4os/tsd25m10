@@ -18,18 +18,20 @@ System description:
 speed_limits =  [30, 50, 60, 80, 100, 120]
 
 speed_limit = int
-    
-#   Randomize speed_limit and randomize driving speed from that speed-10
-def find_speed_within_random_limit():
+
+def randomize_speed_limit():
     global speed_limit
     speed_limit = random.choice(speed_limits)
+    
+#   Randomize speed_limit and randomize driving speed from that speed-10
+def find_speed_within_current_limit():
     return random.randint(speed_limit-10, speed_limit)
 
 ctr = 0
 
 while  True: 
-    print("Driving speed -> ", find_speed_within_random_limit())
-    print("Current speed limit -> ", speed_limit)
+    print("Current speed limit -> ", randomize_speed_limit())
+    print("Driving speed -> ", find_speed_within_current_limit())
     
     ctr += 1
 
