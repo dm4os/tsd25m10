@@ -56,14 +56,6 @@ while  True:
         break
 '''
 
-'''
-
-2. Create a 2nd function which takes that generated SPEED LIMIT and returns it.
-    example-> def myfunc(theGenSpeedLimit):
-                    return (theGenSpeedLimit)
-3. print the returned value of the executed function on step 2
-4. git add ****, git commit ***, git push your changes
-'''
 speed_limits = [20, 30, 40, 50, 60, 70, 80, 100, 120] 
 # Did this as my first interpretation. Realized this probably isn't what was wanted.
 def set_a_speed_limit():
