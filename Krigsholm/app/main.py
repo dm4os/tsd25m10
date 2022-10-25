@@ -85,12 +85,13 @@ def print_limit_and_speed():
     print("Current speed based on limit: ", set_speed_based_on_limit(currentLimit), "km/h")
     newLimit = return_speed_limit()
     if newLimit > currentLimit:
-        print("new limit ", newLimit, "km/h is higher, adjust speed")
+        print("New limit ", newLimit, "km/h is higher, adjust speed")
         print("Current speed based on limit: ", set_speed_based_on_limit(newLimit), "km/h")
     elif newLimit < currentLimit:
-        print("new limit ", newLimit, "km/h is lower, adjust speed")
+        print("New limit ", newLimit, "km/h is lower, adjust speed")
         print("Current speed based on limit: ", set_speed_based_on_limit(newLimit), "km/h")
     else:
+        print("same limit, run agains")
         print_limit_and_speed()
 
 

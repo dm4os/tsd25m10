@@ -31,13 +31,13 @@ class Car:
     self.old_speed = old_speed
     self.current_speed = current_speed
     
-  def accelerate(self):
-    self.current_speed+= 5
-    print("Wroom! Too slow, accelerating by 5km/h...")
+  def accelerate(self, value):
+    self.current_speed+= value
+    print(f"Wroom! Too slow, accelerating by {value} km/h...")
     
-  def decelerate(self):
-    self.current_speed-= 5
-    print("Wroom! Too fast, decelerating by 5km/h...")
+  def decelerate(self, value):
+    self.current_speed-= value
+    print(f"Wroom! Too fast, decelerating by {value} km/h...")
     
   def drive(self):
     print("Wroom wroom. Driving along the speed limits.")
@@ -48,19 +48,21 @@ randomized_speed_limits = [0, 0, 0, 0, 0, 0]
 
 # initialize a new car
 
-mycar = Car(0, 50)
+mycar = Car(0, 80)
 
 # randomize the speed limit values
 for i in range (0, len(speed_limits)):
   randomized_speed_limits[i] = speed_limits[random.randint(0,5)]
 
-# "move" the car through the speed limit "zones"
+# "move" the car through the randomized speed limit "zones"
+# so we can see if the car is trying to modify its behavior.
+
 for n in range (0, len(speed_limits)):
   
   if mycar.current_speed > randomized_speed_limits[n]:
-    mycar.decelerate()
+    mycar.decelerate(15)
   elif mycar.current_speed < randomized_speed_limits[n]:
-    mycar.accelerate()
+    mycar.accelerate(15)
   else:
     mycar.drive()
     
