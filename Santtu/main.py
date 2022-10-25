@@ -30,12 +30,33 @@ def find_speed_within_current_limit():
 ctr = 0
 
 while  True: 
-    print("Current speed limit -> ", randomize_speed_limit())
-    print("Driving speed -> ", find_speed_within_current_limit())
+    randomize_speed_limit()
+    print("Current speed limit -> ", speed_limit)
+
+    new_speed = find_speed_within_current_limit()
+    print("Driving speed -> ", new_speed)
+
+    acceleration = 0
+
+    # At the beginning, there is no acceleration, so we skip the first loop.
+    # Unless you count from 0 to the current speed,
+    # but we're not simulating drive startup in this script quite yet
+    if ctr != 0:
+        acceleration = previous_speed - new_speed
+
+    previous_speed = new_speed
     
+    # We announce how much acceleration/deceleration is necessary and print it
+    if acceleration>0:
+        print("Deceleration necessary ", acceleration)
+    if acceleration<0:
+        acceleration = acceleration * -1
+        print("Acceleration necessary ", acceleration)
+    if acceleration == 0:
+        print("No acceleration necessary")
+
+    # To simulate changes in speed limits during normal drive, we run the script X times, 3 in this case
     ctr += 1
 
     if ctr == 3:
-        #   To simulate speed changes on a typical road, we run the process 3 times
-        # TODO: Record necessary acceleration/deceleration
         break
