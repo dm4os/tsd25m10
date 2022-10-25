@@ -16,10 +16,12 @@ System description
 '''
 
 speed_ranges = [0, 1, 2, 3, 4, 5] #List contains 6 values which are from 0-5.
+speed_limits = [30, 50, 60, 80, 100, 120] #List contains 6 speed limits 
 
 #print(speed_ranges)
 
 # Create a function which simulates the speed limits.
+'''
 def set_speed_limits (somerange):
     match somerange:
         case 0:
@@ -34,30 +36,18 @@ def set_speed_limits (somerange):
             return random.randint(80, 100)
         case 5:
             return random.randint(100, 120)
+'''
 
-def get_speed_limits (speed):
-    match speed:
-        case 0:
-            return 30
-        case 1:
-            return 50
-        case 2:
-            return 60
-        case 3:
-            return 80
-        case 4:
-            return 100
-        case 5:
-            return 120
+def get_speed_limits (speed_limit_list):
+    #Gets the speed limits list and returns one of them randomly
+    return speed_limit_list[random.randint(0, 5)]
 
 def return_speed_limit():
+    #Returns the speed limit
+    return get_speed_limits(speed_limits)
 
-    return get_speed_limits(speed)
 
-
-
-speed = random.randint(0, 5)
-
+#Here we print the max range.
 print("The max speed limit is ", return_speed_limit())
 
 '''
