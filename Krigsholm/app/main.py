@@ -37,23 +37,27 @@ def set_speed(somerange):
             return random.randint(100, 120)
 
 
-def set_speed_limit(limit):
-    match limit:
-        case 0:
-            return 30
-        case 1:
-            return 50
-        case 2:
-            return 60
-        case 3:
-            return 80
-        case 4:
-            return 100
-        case 5:
-            return 120
+def set_speed_limit():
+    limits = [30,50,60,80,100,120]
+    return random.choice(limits)
 
-def return_speed_limit(value):
-    return set_speed_limit(value)
+def return_speed_limit():
+    return set_speed_limit()
+
+def set_speed_based_on_limit(limit):
+    match limit:
+        case 30:
+            return set_speed(0)
+        case 50:
+            return set_speed(1)
+        case 60:
+            return set_speed(2)
+        case 80:
+            return set_speed(3)
+        case 100:
+            return set_speed(4)
+        case 120:
+            return set_speed(5)
 
 
 #print(set_speed(5))
@@ -70,4 +74,24 @@ def important_loop():
         if count == 100:
             break
 
-print("Current speed limit -> ", return_speed_limit(random.randint(0,5)))
+#print("Current speed limit -> ", return_speed_limit())
+
+#print("Current speed based on limit -> ", set_speed_based_on_limit(return_speed_limit()))
+
+
+def print_limit_and_speed():
+    currentLimit = return_speed_limit()
+    print("Current speed limit: ", currentLimit, "km/h")
+    print("Current speed based on limit: ", set_speed_based_on_limit(currentLimit), "km/h")
+    newLimit = return_speed_limit()
+    if newLimit > currentLimit:
+        print("new limit ", newLimit, "km/h is higher, adjust speed")
+        print("Current speed based on limit: ", set_speed_based_on_limit(newLimit), "km/h")
+    elif newLimit < currentLimit:
+        print("new limit ", newLimit, "km/h is lower, adjust speed")
+        print("Current speed based on limit: ", set_speed_based_on_limit(newLimit), "km/h")
+    else:
+        print_limit_and_speed()
+
+
+print_limit_and_speed()
