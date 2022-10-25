@@ -31,6 +31,6 @@ def get_speedlimit(spdlimit):
   return get_speed_limits(spdlimit)
 
 
-for i in range (0, 6):
+for i in range (0, len(speed_ranges)):
   print(get_speedlimit(i))
 
