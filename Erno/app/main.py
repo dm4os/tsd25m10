@@ -54,9 +54,9 @@ def simulate_car():
     print("Old speed limit was " + str(car_old_speedlimit))
     print("New speed limit is " + str(new_speed_limit))
     if(old_speed_limit < new_speed_limit):
-        print("Increasing car speed.")
+        print("Increasing car speed by " + str(new_speed_limit - old_speed_limit) + " km/h to match the new speed limit.")
     elif(old_speed_limit > new_speed_limit):
-        print("Slowing down.")
+        print("Slowing down by " + str(old_speed_limit - new_speed_limit) + " km/h to match the new speed limit.")
     else:
         print("Speed limit stayed the same, continuing with the same speed.");
     set_old_speed_limit(new_speed_limit)
