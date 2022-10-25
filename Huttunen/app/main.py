@@ -25,9 +25,30 @@ def get_speed_limit(limit):
 def return_limit():
     return get_speed_limit(speed_ranges)
 
+def car():
 
-#while loop that verifies that the functions work by printing six random speed limits
-i = 1
-while i <= 6:
-    print(return_limit())
-    i += 1
+    oldSpeed = return_limit()
+    newSpeed = return_limit()
+
+    print("Old speed limit is :", oldSpeed)
+    print("New speed limit is :", newSpeed)
+
+    if oldSpeed < newSpeed:
+        print("New limit is:", newSpeed, "speed up")
+    elif newSpeed < oldSpeed:
+        print("New limit is :", newSpeed, "slow down")
+    else:
+        print("Maintain current speed")
+
+    return oldSpeed, newSpeed
+
+car()
+print("Randomly picked speed limit:", return_limit())
+
+# print(car())
+
+# #while loop that verifies that the functions work by printing six random speed limits
+# i = 1
+# while i <= 6:
+#     print("Randomly picked speed limit:", return_limit())
+#     i += 1
