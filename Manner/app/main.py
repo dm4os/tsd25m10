@@ -56,36 +56,21 @@ while  True:
         break
 '''
 
+#TODO from 13:08 to 14:08
+#Based on the function we have created you need to:
+#1. Create a function which only returns SPEEDS LIMITS not intervals
+#2. Create a 2nd function which takes that generated SPEED LIMIT and returns it.
+#    example-> def myfunc(theGenSpeedLimit):
+#                    return (theGenSpeedLimit)
+#3. print the returned value of the executed function on step 2
+
 speed_limits = [20, 30, 40, 50, 60, 70, 80, 100, 120] 
-# Did this as my first interpretation. Realized this probably isn't what was wanted.
 def set_a_speed_limit():
     
     return random.choice(speed_limits)
 
+def print_speed():
+    current_speed = set_a_speed_limit()
+    return current_speed
 
-# 1. Create a function which only returns SPEED LIMITS not intervals
-def speed_limit_from_range(somerange):
-    match somerange:
-        case 0:
-            #print(" I have identified this case")
-            return 30
-        case 1:
-            return 50
-        case 2:
-            return 60
-        case 3:
-            return 80
-        case 4:
-            return 100
-        case 5:
-            return 120
-
-#2. Create a 2nd function which takes that generated SPEED LIMIT and returns it.
-#    example-> def myfunc(theGenSpeedLimit):
-#                    return (theGenSpeedLimit)
-
-def range_for_speed_limit(speed_range):
-    return speed_limit_from_range(speed_range)
-
-# 3. print the returned value of the executed function on step 2
-print(range_for_speed_limit(random.choice(speed_ranges)))
+print(f"Current speed limit is {print_speed()}")
