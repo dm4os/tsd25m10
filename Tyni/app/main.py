@@ -1,4 +1,8 @@
+from asyncio.windows_events import NULL
 import random
+import time
+from re import I
+from time import sleep
 
 '''
 System description
@@ -21,7 +25,7 @@ speed_limits = [30, 50, 60, 80, 100, 120] #List contains 6 speed limits
 #print(speed_ranges)
 
 # Create a function which simulates the speed limits.
-'''
+
 def set_speed_limits (somerange):
     match somerange:
         case 0:
@@ -36,7 +40,7 @@ def set_speed_limits (somerange):
             return random.randint(80, 100)
         case 5:
             return random.randint(100, 120)
-'''
+
 
 def get_speed_limits (speed_limit_list):
     #Gets the speed limits list and returns one of them randomly
@@ -47,27 +51,30 @@ def return_speed_limit():
     return get_speed_limits(speed_limits)
 
 
-#Here we print the max speed.
-print("The max speed limit is ", return_speed_limit())
-
-'''
-# The variable used by the function
-#in_var = "I am the variable value"
-
 ctr = 0
-
-# A while loop which could run forever if the counter and IF condition would not be defined
+lastlimit = 0
 
 while True:
+    adapt = 15
     random_speed_rng_gen = random.randint(0, 5) #Just a random int between 0 and 5
+    currentlimit = return_speed_limit()
+    #Here we print the max speed.
+    print("The current speed limit is ", currentlimit, " and last speed limit was ", lastlimit)
+    ctr += 1
+    time.sleep(1)
 
-    #print("Current speed range is ", random_speed_rng_gen)
+    if lastlimit > currentlimit:
+        print("Slowing down")
+        lastlimit = currentlimit
+    elif lastlimit < currentlimit:
+        print("Speeding up")
+        lastlimit = currentlimit
+    else:
+        print("Driving at same speed")
+        lastlimit = currentlimit
 
-    #print(set_speed_limits())
-
-
-    ctr += 1 # Adds 1 to ctr everytime this runs
-
-    if ctr == 100: #When ctr reaches 100, application stops
+    if ctr == 10:
         break
-'''
+
+
+
