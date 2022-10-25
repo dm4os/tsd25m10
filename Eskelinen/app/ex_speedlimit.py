@@ -16,11 +16,27 @@ System description:
 '''
 
 speed_ranges =  [0, 1, 2, 3, 4, 5]
-speed_range_values = [30, 50, 60, 80, 100, 120]
+#speed_range_values = [30, 50, 60, 80, 100, 120]
 
-# Return a random speed limit from the range of speed limits
+# Give the speedlimit based on the range value
+def giveSpeedLimit(range):
+    match range:
+        case 0:
+            return 30
+        case 1:
+            return 50
+        case 2:
+            return 60
+        case 3:
+            return 80
+        case 4:
+            return 100
+        case 5:
+            return 120
+
+# Give a random speed limit
 def randomSpeedLimit():
-    return random.choice(speed_range_values)
+    return giveSpeedLimit(random.choice(speed_ranges))
 
 print(randomSpeedLimit())
 

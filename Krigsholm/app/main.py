@@ -52,8 +52,8 @@ def set_speed_limit(limit):
         case 5:
             return 120
 
-def print_speed_limit(value):
-    print("Current speed limit -> ", set_speed_limit(value))
+def return_speed_limit(value):
+    return set_speed_limit(value)
 
 
 #print(set_speed(5))
@@ -70,4 +70,4 @@ def important_loop():
         if count == 100:
             break
 
-print_speed_limit(random.randint(0,5))
+print("Current speed limit -> ", return_speed_limit(random.randint(0,5)))
