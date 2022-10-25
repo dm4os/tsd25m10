@@ -17,3 +17,12 @@
 # Ex 3
 ## py lib/resources
     * https://www.w3schools.com/python/module_random.asp
+
+### TODO from 13:08 to 14:08
+Based on the function we have created you need to:
+1. Create a function which only returns SPEEDS LIMITS not intervals
+2. Create a 2nd function which takes that generated SPEED LIMIT and returns it.
+    example-> def myfunc(theGenSpeedLimit):
+                    return (theGenSpeedLimit)
+3. print the returned value of the executed function on step 2
+4. git add ****, git commit ***, git push your changes
