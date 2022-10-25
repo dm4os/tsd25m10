@@ -12,3 +12,8 @@
             -> eval "$(ssh-agent -s)"
         b. "Tell the agent" where and which an SSH PRIVATE KEY is located
             -> ssh-add ~/.ssh/<name of your PRIVATE KEY> 
+
+
+# Ex 3
+## py lib/resources
+    * https://www.w3schools.com/python/module_random.asp
