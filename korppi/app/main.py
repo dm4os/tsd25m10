@@ -19,18 +19,32 @@ speed_ranges =  [0, 1, 2, 3, 4, 5] # List contains 6 values which are counted fr
 
 # a function to get actual speed limits in km/h.
 def get_speed_limits(range):
-  match range:
-    case 0: return 30
-    case 1: return 50
-    case 2: return 60
-    case 3: return 80
-    case 4: return 100
-    case 5: return 120
+  
+  if range > len(speed_ranges):
+    return "Error: out of range."
+  elif range < 0:
+    return "Error: out of range."
+  else:
+    range = random.randint(0, 5)
+    match range:
+      case 0: return 30
+      case 1: return 50
+      case 2: return 60
+      case 3: return 80
+      case 4: return 100
+      case 5: return 120
 
 def get_speedlimit(spdlimit):
   return get_speed_limits(spdlimit)
 
 
+print(get_speedlimit(0))
+
+# a simple error check
+print(get_speedlimit(-1))
+print(get_speedlimit(12))
+'''
+# print some random speed_limits
 for i in range (0, len(speed_ranges)):
   print(get_speedlimit(i))
-
+'''
