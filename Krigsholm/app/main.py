@@ -37,23 +37,12 @@ def set_speed(somerange):
             return random.randint(100, 120)
 
 
-def set_speed_limit(limit):
-    match limit:
-        case 0:
-            return 30
-        case 1:
-            return 50
-        case 2:
-            return 60
-        case 3:
-            return 80
-        case 4:
-            return 100
-        case 5:
-            return 120
+def set_speed_limit():
+    limits = [30,50,60,80,100,120]
+    return random.choice(limits)
 
-def return_speed_limit(value):
-    return set_speed_limit(value)
+def return_speed_limit():
+    return set_speed_limit()
 
 
 #print(set_speed(5))
@@ -70,4 +59,4 @@ def important_loop():
         if count == 100:
             break
 
-print("Current speed limit -> ", return_speed_limit(random.randint(0,5)))
+print("Current speed limit -> ", return_speed_limit())
