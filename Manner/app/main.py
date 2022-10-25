@@ -88,4 +88,4 @@ def range_for_speed_limit(speed_range):
     return speed_limit_from_range(speed_range)
 
 # 3. print the returned value of the executed function on step 2
-print(range_for_speed_limit(3))
+print(range_for_speed_limit(random.choice(speed_ranges)))
