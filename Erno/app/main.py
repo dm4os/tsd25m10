@@ -15,13 +15,16 @@ Based on the function we have created you need to:
 
 speed_limits =  [30, 50, 60, 80, 100, 120] # List contains 6 speed limit values
 
-# sets the speed limit randomly to one of the values from the speed limits table
+# function that sets the speed limit randomly to one of the values from the speed limits table
+# parameter: list of speed limits
 def set_speed_limit(speed_limit_table):
     return speed_limit_table[random.randint(0,5)]
     
-# calls the speed limit setting function and returns the speed limit
+# function that calls the speed limit setting function and returns the speed limit
+# 
 def return_speed_limit():
     generated_speed_limit = set_speed_limit(speed_limits)
     return generated_speed_limit
 
+print("Speed limit is: ")
 print(return_speed_limit())
