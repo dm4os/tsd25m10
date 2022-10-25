@@ -47,7 +47,7 @@ def return_speed_limit():
     return get_speed_limits(speed_limits)
 
 
-#Here we print the max range.
+#Here we print the max speed.
 print("The max speed limit is ", return_speed_limit())
 
 '''
