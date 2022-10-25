@@ -48,13 +48,15 @@ randomized_speed_limits = [0, 0, 0, 0, 0, 0]
 
 # initialize a new car
 
-mycar = Car(0, 50)
+mycar = Car(0, 80)
 
 # randomize the speed limit values
 for i in range (0, len(speed_limits)):
   randomized_speed_limits[i] = speed_limits[random.randint(0,5)]
 
-# "move" the car through the speed limit "zones"
+# "move" the car through the randomized speed limit "zones"
+# so we can see if the car is trying to modify its behavior.
+
 for n in range (0, len(speed_limits)):
   
   if mycar.current_speed > randomized_speed_limits[n]:
