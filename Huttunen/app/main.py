@@ -17,14 +17,17 @@ System description:
 
 speed_ranges =  [30, 50, 60, 80, 100, 120] 
 
-
+#returns a random value from the speed_ranges list
 def get_speed_limit(limit):
     return random.choice(limit)
 
+#returns the random value selected by the get_speed_limit function
 def return_limit():
-  return get_speed_limit(speed_ranges)
+    return get_speed_limit(speed_ranges)
 
+
+#while loop that verifies that the functions work by printing six random speed limits
 i = 1
-while i < 6:
+while i <= 6:
     print(return_limit())
     i += 1
