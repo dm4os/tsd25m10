@@ -61,11 +61,11 @@ def car(new_limit):
 
     elif last_limit < new_limit:
         print("Speeding up")
-        
+
     else:
         print("Driving at same speed")
 
-last_limit = 100
+last_limit = 0
 ctr = 0
 
 while ctr != 10:
