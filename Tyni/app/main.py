@@ -20,7 +20,7 @@ System description
 '''
 
 speed_ranges = [0, 1, 2, 3, 4, 5] #List contains 6 values which are from 0-5.
-speed_limits = [30, 50, 60, 80, 100, 120] #List contains 6 speed limits 
+speed_limits = [30, 50, 60, 80, 100, 120] #List contains 6 speed limits
 
 #print(speed_ranges)
 
@@ -50,30 +50,32 @@ def return_speed_limit():
     #Returns the speed limit
     return get_speed_limits(speed_limits)
 
+def car(new_limit):
 
-ctr = 0
-last_limit = 0
-
-while True:
-    random_speed_rng_gen = random.randint(0, 5) #Just a random int between 0 and 5
-    new_limit = return_speed_limit()
+    #Prints the new speed and the old speed limits.
     print("The new speed limit is ", new_limit, " and last speed limit was ", last_limit)
 
+    #Compares the two speed limits to slow down/speed up if necessary
     if last_limit > new_limit:
         print("Slowing down")
-        last_limit = new_limit
 
     elif last_limit < new_limit:
         print("Speeding up")
-        last_limit = new_limit
-
+        
     else:
         print("Driving at same speed")
-        last_limit = new_limit
+
+last_limit = 100
+ctr = 0
+
+while ctr != 10:
+    random_speed_rng_gen = random.randint(0, 5) #Just a random int between 0 and 5
+    new_limit = return_speed_limit() #Gets a new random limit
+
+    car(new_limit)
+
+    last_limit = new_limit
 
     ctr += 1
-    if ctr == 10:
-        break
-
 
 
