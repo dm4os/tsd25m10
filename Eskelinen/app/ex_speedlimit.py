@@ -26,17 +26,24 @@ def giveSpeedLimit(x):
 
 # Give a random speed limit
 def randomSpeedLimit():
-    return giveSpeedLimit(random.choice(speed_ranges))
+    return giveSpeedLimit(random.choice(speed_ranges)) # Using the list to avoid errors here
 
 # print(randomSpeedLimit())
 
-old_limit = 30
+old_limit = 30 # A default when no speed limit is defined
 new_limit = randomSpeedLimit()
 
+# Car function that expresses the speed limits and the needed action
+# TODO: Check how to do this with a Class and an Object
 def car(new_limit):
     print("Old limit was", old_limit)
     print("New limit is", new_limit)
-    # TODO: Add comparison of two limits and decision to accelerate, decelerate or keep same speed
+    if old_limit > new_limit:
+        print("Slow down!")
+    if old_limit < new_limit:
+        print("Speed up!")
+    if old_limit == new_limit:
+        print("Keep this speed.")
 
 for x in range(0,5):
     new_limit = randomSpeedLimit()
