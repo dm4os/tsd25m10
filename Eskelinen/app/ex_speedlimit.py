@@ -1,6 +1,23 @@
 import random
 
 '''
+# Speed controller of autonomous vehicles
+
+## Behavior-driven development [BDD] approach  
+As a        driver
+I WANT      the car to determine the speed limit and adjust the speed to that limit.
+SO THAT     I don't have to adjust the speed myself
+
+## Acceptance test-driven development [ATDD] approach 
+GIVEN       the speed limit 70km/h
+WHEN        the car in moving
+THEN        the speed limit should remain/adjusted between 65 and 70km/h
+
+GIVEN       the speed limit 70km/h
+WHEN        the speed limit changes to 50km/h
+THEN        deceleration rate should be 15km/h
+
+
 System description:
 * streets have signs to make drivers aware about the speed limit. 
     If I have a LIST of speed ranges then I would use a python list.
@@ -26,17 +43,24 @@ def giveSpeedLimit(x):
 
 # Give a random speed limit
 def randomSpeedLimit():
-    return giveSpeedLimit(random.choice(speed_ranges))
+    return giveSpeedLimit(random.choice(speed_ranges)) # Using the list to avoid errors here
 
 # print(randomSpeedLimit())
 
-old_limit = 30
+old_limit = 30 # A default when no speed limit is defined
 new_limit = randomSpeedLimit()
 
+# Car function that expresses the speed limits and the needed action
+# TODO: Check how to do this with a Class and an Object
 def car(new_limit):
     print("Old limit was", old_limit)
     print("New limit is", new_limit)
-    # TODO: Add comparison of two limits and decision to accelerate, decelerate or keep same speed
+    if old_limit > new_limit:
+        print("Slow down!")
+    if old_limit < new_limit:
+        print("Speed up!")
+    if old_limit == new_limit:
+        print("Keep this speed.")
 
 for x in range(0,5):
     new_limit = randomSpeedLimit()
