@@ -52,27 +52,26 @@ def return_speed_limit():
 
 
 ctr = 0
-lastlimit = 0
+last_limit = 0
 
 while True:
-    adapt = 15
     random_speed_rng_gen = random.randint(0, 5) #Just a random int between 0 and 5
-    currentlimit = return_speed_limit()
-    #Here we print the max speed.
-    print("The current speed limit is ", currentlimit, " and last speed limit was ", lastlimit)
-    ctr += 1
-    time.sleep(1)
+    new_limit = return_speed_limit()
+    print("The new speed limit is ", new_limit, " and last speed limit was ", last_limit)
 
-    if lastlimit > currentlimit:
+    if last_limit > new_limit:
         print("Slowing down")
-        lastlimit = currentlimit
-    elif lastlimit < currentlimit:
+        last_limit = new_limit
+
+    elif last_limit < new_limit:
         print("Speeding up")
-        lastlimit = currentlimit
+        last_limit = new_limit
+
     else:
         print("Driving at same speed")
-        lastlimit = currentlimit
+        last_limit = new_limit
 
+    ctr += 1
     if ctr == 10:
         break
 
